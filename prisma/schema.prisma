@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Task {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String?
+  color       Colors   @default(White)
+  isFavorite  Boolean  @default(false)
+  favorites   Favorite[]
+}
+
+model Favorite {
+  id     Int  @id @default(autoincrement())
+  taskId Int
+  task   Task @relation(fields: [taskId], references: [id])
+}
+
+enum Colors{
+White  
+LightBlue
+LightGreen
+LightYellow
+LightPink
+DarkPink
+Blue
+Pink
+Yellow
+SalmonPink
+Grey
+DarkGrey
+LightBrown
+}
+
+
+
+
+
+
