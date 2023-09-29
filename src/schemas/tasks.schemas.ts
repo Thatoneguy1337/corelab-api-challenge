@@ -31,7 +31,7 @@ const taskSchemaRequest = taskSchema.omit({
     id:true
 })
 
-const taskSchemaUpdate = taskSchema
+const taskSchemaUpdate = taskSchemaResponse
 .omit({
   id: true
 })
