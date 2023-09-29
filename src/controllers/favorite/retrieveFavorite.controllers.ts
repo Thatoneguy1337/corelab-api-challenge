@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { listAllFavoritesService } from "../../services/favorite/retrieveFavorite.services";
+import { listAllFavoritesService } from "../../services/favorite";
 import { TFavoriteResponse } from "../../interfaces/task.interfaces";
 
 
