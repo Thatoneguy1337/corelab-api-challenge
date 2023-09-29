@@ -16,7 +16,6 @@ model Task {
   title       String
   description String?
   color       Colors   @default(White)
-  isFavorite  Boolean  @default(false)
   favorites   Favorite[]
 }
 

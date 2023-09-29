@@ -9,7 +9,6 @@ export const createFavoriteService = async(taskId:number): Promise<TFavoriteResp
     const favorite: Favorite = await prisma.favorite.create({
         data: {
          taskId: taskId
-       
         },
         include:{
             task:true
