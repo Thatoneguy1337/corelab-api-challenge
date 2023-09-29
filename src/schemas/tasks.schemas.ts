@@ -55,7 +55,7 @@ const favoriteSchemaRequest = favoriteSchema.omit({
 
 const favoriteSchemaUpdate = favoriteSchema.omit({
   id:true,
-  taskId: true
+  taskId: true,
 })
 
 const favoritesManySchema = z.array(favoriteSchema);
