@@ -1,6 +1,6 @@
-import { TTaskResponse, TTaskUpdateRequest } from "../interfaces/task.interfaces";
-import { prisma } from "../server";
-import { taskSchemaResponse,taskSchemaUpdate } from "../schemas/tasks.schemas";
+import { TTaskResponse, TTaskUpdateRequest } from "../../interfaces/task.interfaces";
+import { prisma } from "../../server";
+import { taskSchemaResponse,taskSchemaUpdate } from "../../schemas/tasks.schemas";
 import { Task } from "@prisma/client";
 
 

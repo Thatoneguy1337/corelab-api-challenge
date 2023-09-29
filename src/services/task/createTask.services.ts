@@ -1,7 +1,7 @@
 import { Task } from "@prisma/client";
-import { TTaskRequest, TTaskResponse } from "../interfaces/task.interfaces";
-import { prisma } from "../server";
-import { taskSchemaResponse } from "../schemas/tasks.schemas";
+import { TTaskRequest, TTaskResponse } from "../../interfaces/task.interfaces";
+import { prisma } from "../../server";
+import { taskSchemaResponse } from "../../schemas/tasks.schemas";
 
 
 export const createTaskService = async (

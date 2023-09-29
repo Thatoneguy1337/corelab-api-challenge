@@ -5,7 +5,7 @@ import {
     createTaskController, 
     deleteTaskController, 
     updateTaskController, 
-    listAllTaskController } from "../controllers";
+    listAllTaskController } from "../controllers/task";
 
 
 export const taskRoutes: Router = Router();

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { deleteTaskService } from "../services";
+import { deleteTaskService } from "../../services/task";
 
 export const deleteTaskController = async (
     req: Request,

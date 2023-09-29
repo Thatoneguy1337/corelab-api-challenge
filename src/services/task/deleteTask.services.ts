@@ -1,4 +1,4 @@
-import { prisma } from "../server";
+import { prisma } from "../../server";
 
 export const deleteTaskService = async (taskId: number): Promise<void> => {
     await prisma.task.delete({

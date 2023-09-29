@@ -1,6 +1,6 @@
 import { Request,Response } from "express";
-import { listAllTaskService } from "../services/retrieveTask.services";
-import { TTaskResponse } from "../interfaces/task.interfaces";
+import { listAllTaskService } from "../../services/task/retrieveTask.services";
+import { TTaskResponse } from "../../interfaces/task.interfaces";
 
 export const listAllTaskController = async (
     req: Request,

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { TTaskResponse, TTaskUpdate } from "../interfaces/task.interfaces";
-import { updateTaskService } from "../services/updateTask.services";
+import { TTaskResponse, TTaskUpdate } from "../../interfaces/task.interfaces";
+import { updateTaskService } from "../../services/task/updateTask.services";
 
 export const updateTaskController = async(req:Request, res: Response)=>{
   const taskId:number = Number(req.params.id);
