@@ -1,213 +1,88 @@
 ## Corelab Challenge:
 
-# Backend To-do List API
-
-<p>Este é o backend de uma aplicação To-do List, que fornece endpoints para gerenciar tarefas e favoritos. A API é desenvolvida em Node.js, usa TypeScript para tipagem estática, se comunica com um banco de dados PostgreSQL por meio do Prisma ORM e utiliza-se do framework ExpressJs. Ela oferece operações CRUD (Create, Read, Update, Delete) para tarefas e favoritos.</p>
-
-## Pré-requisitos
-
-- Node.js v20.3.0
-- PostgreSQL (certifique-se de ter um banco de dados configurado)
-
-## Configuração
-
-1. Clone este repositório:
-
-   ```bash
-   git@github.com:Thatoneguy1337/corelab-api-challenge.git
-   ```
-2. Instalar as dependências:
-
-   ```bash
-   npm install
-   ```
-
-3.Configure as variáveis de ambiente:
-  
-  <p>Crie um arquivo .env na raiz do projeto e configure as seguintes variáveis de ambiente:</p>
-   
-   ```bash
-   DATABASE_URL=postgresql://seu-usuario:senha@localhost:5432/seu-banco-de-dados
-   PORT=3000
-   ```
-  <p>Substitua seu-usuario, senha, localhost, 5432 e seu-banco-de-dados pelas informações de conexão do seu banco de dados PostgreSQL.</p>
-
- 4.Execute as migrações do Prisma para criar as tabelas no banco de dados:
-  
-  ```bash
-   npx prisma migrate dev
-   ```
- 5.Inicie o servidor:
-
-   ```bash
-    npm run dev 
-   ```
-
-A API estará disponível em http://localhost:3000.
-
-## Uso
-A API oferece os seguintes endpoints:
-
-<ul>
-<li>/tasks: Endpoint para gerenciar tarefas.</li>
-<li>/favorites: Endpoint para gerenciar favoritos.</li>
-</ul>
-
-Consulte a documentação da API para obter detalhes sobre os endpoints e as operações disponíveis.
- 
-   
-## **Endpoints**
-
-| HTTP Method | Description            | Endpoint                      | 
-| ----------- | ---------------------- | ----------------------------- | 
-| POST        | Create task            | `/task`                       | 
-| PATCH       | Update Task            | `/task/:id`                   | 
-| GET         | List task              | `/task`                       |  
-| DELETE      | Delete task            | `/task/:id`                   | 
-| POST        | Add favorite           | `/favorite`                   | 
-| GET         | List all favorites     | `/favorite`                   |  
-| PATCH       | Update favorite        | `/favorite/:id`               | 
-| DELETE      | Delete favorite        | `/favorite/:id`               | 
+You are tasked with building a web application that allows users to create and manage their to-do lists. The application should consist of a responsive webpage built in React, and an API built in Node.js to store and manage the to-do lists.
 
 
-<h2 align ='center'> Criando tarefa </h2>
- 
- Nessa rota o usuário pode criar uma tarefa dentro do corpo da requisição é necessário preencher o campo de título, no entanto o campos descrição e cor são opcionais
- e a cor da tarefa vêm como padrão na cor branca.
+### The repositories
+The [frontend repository](https://github.com/corelabbr/corelab-web-challenge)
 
-```json
-{
-	"title": "esquentar almoço",
-	"description": "botar prato de comida no microondas por 5 minutos."
-}
-```
+If you feel more comfortable, you can pick another React framework and show us your skills.
 
-`POST /task - FORMATO DA RESPOSTA - STATUS 201`
+The [backend repository](https://github.com/corelabbr/corelab-api-challenge)
 
-```json
-{
-   "id": 3,
-	"title": "esquentar almoço",
-	"description": "botar prato de comida no microondas por 5    minutos.",
-	"color": "White"
-}
-```
-<h2 align ='center'> Editar tarefa </h2>
- 
- Essa rota permite que o usuário edite uma tarefa passando a informação que o usuário quer alterar na request, é de suma importância que o id da tarefa seja passado como parâmetro da requisição.
+If you feel more comfortable, you can pick another Node JS framework and show us your skills.
 
-```json
-{
-	
-{
-	"description": "Esquentar em 2 minutos"
-}
-```
-
-`PATCH /task/:id - FORMATO DA RESPOSTA - STATUS 200`
-
-```json
-{
-	"id": 3,
-	"title": "esquentar almoço",
-	"description": "Esquentar em 2 minutos",
-	"color": "White"
-}
-```
-<h2 align ='center'> deletar tarefa </h2>
- 
- Essa rota permite que o usuário delete uma tarefa passando o id da tarefa como parâmetro da requisição requisição.
+### The Layout
+Open the [layout mockup](https://www.figma.com/file/sQrUVHTlyogq3qGdkqGTXN/mockup?node-id=7%3A2&t=ANTOTiqjqGWYuoUr-0) in desktop and mobile version and follow this design as much as possible.
 
 
+### The application should have the following functionality:
 
-`DELETE /task/:id - FORMATO DA RESPOSTA - STATUS 204 NO RESPONSE`
+1. Users should be able to create, read, update, and delete to-do items using the API.
+2. Users should be able to mark an item as a favorite.
+3. Users should be able to set a color for each to-do item.
+4. The React frontend should display the user's to-do list in a responsive and visually appealing manner, with the ability to filter by favorite items and color.
+5. The favorited items should be displayed at the top of the list.
 
+### Technical Requirements:
+1. The backend API should be built in Node.js framework and use a database of your choice (e.g., MongoDB, PostgreSQL, etc.).
+2. The frontend should be built in React and use modern web development tools and best practices.
+3. The application should be responsive and visually appealing.
 
-<h2 align ='center'> Listar tarefas </h2>
- 
-Essa rota permite que o usuário liste suas tarefas criadas.
-
-`GET /task - FORMATO DA RESPOSTA - STATUS 200`
- 
-```json
-[
-	{
-		"id": 2,
-		"title": "esquentar almoço",
-		"description": "botar prato de comida no microondas por 5    minutos.",
-		"color": "White"
-	},
-	{
-		"id": 3,
-		"title": "esquentar almoço",
-		"description": "Esquentar em 2 minutos",
-		"color": "White"
-	}
-]
-```
-<h2 align ='center'> adicionando favorito </h2>
- 
- Nessa rota o usuário pode adicionar uma tarefa ao favoritos, passando o id por parâmetro na requisição.
+### Deliverables:
+1. A link to a GitHub repository containing the complete source code for the project.
+2. A written description of how to set up and run the application locally.
 
 
-`POST /favorite/:id - FORMATO DA RESPOSTA - STATUS 201`
+### Evaluation Criteria:
+1. Code Quality
+2. Code Format
+3. Code Perfomance
+4. Frontend Design
+5. If your code is Easily Readable
+6. Mobile First approach
+7. Code Responsability
+8. Features Work
+9. Responsiveness
+10. Does the application meet the functionality requirements listed above?
+11. Is the code well-organized, easy to read, and well-documented?
+12. Are modern web development tools and best practices used?
+13. Is the application visually appealing and responsive?
 
-```json
-{
-	"id": 2,
-	"taskId": 3,
-	"task": {
-		"id": 3,
-		"title": "esquentar almoço",
-		"description": "Esquentar em 2 minutos",
-		"color": "White",
-		"isFavorite": false
-	}
-}
-```
-<h2 align ='center'> deletar favorito </h2>
- 
- Nessa rota o usuário pode deletar uma tarefas favoritadas, passando o id por parâmetro na requisição.
+### Backend
+Repository: 
+1. Node: ^16.15.0
+2. NPM: ^8.5.5
+3. Framework: Adonis TS or any other node framework you know.
+4. Database: Choose your own, you can even save in memory.
+
+### Frontend
+Repository: 
+1. Node: ^16.15.0
+2. NPM: ^8.5.5
+3. Framework: React TS
+4. Sass or other preprocessor
+
+### Want to impress us even more?
+If you feel comfortable and want to impress us even more, you can do the following:
+
+1. Work on correct types and interfaces
+2. Work on eslint rules
+3. Work prettier config
+4. Work on docker containers
+5. Work on tests
+6. Work on CI/CD
+
+### What to do when you finish?
+
+Create a file PULL_REQUEST.md where you will describe what you did and how in as much detail as possible. Feel free to add videos for better explanation.
+
+Create a new pull request using the same branch name for Backend and Frontend
+
+Send us the pull requests and that's all!
 
 
-`DELETE /favorite/:id - FORMATO DA RESPOSTA - STATUS 204 NO CONTENT`
-
-
-<h2 align ='center'> listar favoritos </h2>
- 
- Nessa rota o usuário pode listar as tarefas favoritadas, passando o id por parâmetro na requisição.
-
-
-`GET /favorite - FORMATO DA RESPOSTA - STATUS 200`
-
-```json
-
-[
-	{
-		"id": 2,
-		"taskId": 3,
-		"task": {
-			"id": 3,
-			"title": "esquentar almoço",
-			"description": "Esquentar em 2 minutos",
-			"color": "White"
-		}
-	},
-	{
-		"id": 3,
-		"taskId": 4,
-		"task": {
-			"id": 4,
-			"title": "atualizar Linkedin",
-			"description": "adicionar novos projetos ao meu portfolio do Linkedin",
-			"color": "White"
-		}
-	}
-]
-
-```
-
-<span> feito por : Victor Guterres Borges </span>
+#### Good luck! The sky is the limit 🚀
 
 
 
