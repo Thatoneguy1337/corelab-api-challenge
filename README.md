@@ -19,7 +19,6 @@
 2. Instalar as dependências:
 
    ```bash
-   cd backend-todo-list
    npm install
    ```
 
