@@ -56,3 +56,15 @@ A API oferece os seguintes endpoints:
 Consulte a documentação da API para obter detalhes sobre os endpoints e as operações disponíveis.
  
    
+## **Endpoints**
+
+| HTTP Method | Description            | Endpoint                      | 
+| ----------- | ---------------------- | ----------------------------- | 
+| POST        | Create task            | `/task`                       | 
+| PATCH       | Update Task            | `/task/:id`                   | 
+| GET         | List task              | `/task`                       |  
+| DELETE      | Delete task            | `/task/:id`                   | 
+| POST        | Add favorite           | `/favorite`                   | 
+| GET         | List all favorites     | `/favorite`                   |  
+| PATCH       | Update favorite        | `/favorite/:id`               | 
+| DELETE      | Delete favorite        | `/favorite/:id`               | 
