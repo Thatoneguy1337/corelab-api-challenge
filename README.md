@@ -207,7 +207,7 @@ Essa rota permite que o usuário liste suas tarefas criadas.
 
 ```
 
-<span>feito por: Victor Guterres Borges</span>
+<span> feito por : Victor Guterres Borges </span>
 
 
 
