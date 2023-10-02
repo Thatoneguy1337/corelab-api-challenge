@@ -5,12 +5,12 @@ import { Task } from "@prisma/client";
 
 
 export const updateTaskService = async(data:any, taskId:number):Promise<TTaskResponse>=>{
-    const updatedAd: Task = await prisma.task.update({
+    const updatedTask: Task = await prisma.task.update({
         where: { id: taskId },
         data:{...data},
     });
     
-      return taskSchemaResponse.parse(updatedAd);
+      return taskSchemaResponse.parse(updatedTask);
 }
 
 
