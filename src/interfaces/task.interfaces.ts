@@ -23,6 +23,7 @@ export type TFavorite = z.infer<typeof favoriteSchema>;
 export type TFavoriteResponse = z.infer<typeof favoriteSchemaResponse>;
 export type TFavoriteRequest = z.infer<typeof favoriteSchemaRequest>;
 export type TFavoriteUpdate = z.infer<typeof favoriteSchemaUpdate>;
+export type TFavoriteUpdateRequest = Partial<TFavoriteUpdate>;
 export type TManyFavorite = z.infer<typeof favoritesManySchema>;
 
 

@@ -55,7 +55,7 @@ const favoriteSchemaRequest = favoriteSchema.omit({
 const favoriteSchemaUpdate = favoriteSchema.omit({
   id:true,
   taskId: true,
-})
+}).deepPartial()
 
 const favoritesManySchema = z.array(favoriteSchema);
 
