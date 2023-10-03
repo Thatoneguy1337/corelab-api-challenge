@@ -16,14 +16,9 @@ model Task {
   title       String
   description String?
   color       Colors   @default(White)
-  favorites   Favorite[]
+  is_favorite Boolean  @default(false)
 }
 
-model Favorite {
-  id     Int  @id @default(autoincrement())
-  taskId Int
-  task   Task @relation(fields: [taskId], references: [id])
-}
 
 enum Colors{
 White  

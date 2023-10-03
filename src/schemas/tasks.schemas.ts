@@ -20,8 +20,10 @@ const taskSchema = z.object({
     "SalmonPink",
     "Grey",
     "DarkGrey",
-    "LightBrown"]).default('White')
+    "LightBrown"]).default('White'),
+  is_favorite:z.boolean().default(false),
 });
+
 
 const taskSchemaResponse = taskSchema;
 

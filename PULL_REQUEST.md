@@ -64,10 +64,7 @@ Consulte a documentação da API para obter detalhes sobre os endpoints e as ope
 | PATCH       | Update Task            | `/task/:id`                   | 
 | GET         | List task              | `/task`                       |  
 | DELETE      | Delete task            | `/task/:id`                   | 
-| POST        | Add favorite           | `/favorite`                   | 
-| GET         | List all favorites     | `/favorite`                   |  
-| PATCH       | Update favorite        | `/favorite/:id`               | 
-| DELETE      | Delete favorite        | `/favorite/:id`               | 
+
 
 
 <h2 align ='center'> Criando tarefa </h2>
@@ -89,7 +86,8 @@ Consulte a documentação da API para obter detalhes sobre os endpoints e as ope
    "id": 3,
 	"title": "esquentar almoço",
 	"description": "botar prato de comida no microondas por 5    minutos.",
-	"color": "White"
+	"color": "White",
+	"isfavorite":"false"
 }
 ```
 <h2 align ='center'> Editar tarefa </h2>
@@ -98,9 +96,8 @@ Consulte a documentação da API para obter detalhes sobre os endpoints e as ope
 
 ```json
 {
-	
-{
-	"description": "Esquentar em 2 minutos"
+	"description": "Esquentar em 2 minutos",
+	"is_false": true
 }
 ```
 
@@ -111,7 +108,8 @@ Consulte a documentação da API para obter detalhes sobre os endpoints e as ope
 	"id": 3,
 	"title": "esquentar almoço",
 	"description": "Esquentar em 2 minutos",
-	"color": "White"
+	"color": "White",
+	"is_false": true
 }
 ```
 <h2 align ='center'> deletar tarefa </h2>
@@ -135,76 +133,16 @@ Essa rota permite que o usuário liste suas tarefas criadas.
 		"id": 2,
 		"title": "esquentar almoço",
 		"description": "botar prato de comida no microondas por 5    minutos.",
-		"color": "White"
-	},
-	{
-		"id": 3,
-		"title": "esquentar almoço",
-		"description": "Esquentar em 2 minutos",
-		"color": "White"
-	}
-]
-```
-<h2 align ='center'> adicionando favorito </h2>
- 
- Nessa rota o usuário pode adicionar uma tarefa ao favoritos, passando o id por parâmetro na requisição.
-
-
-`POST /favorite/:id - FORMATO DA RESPOSTA - STATUS 201`
-
-```json
-{
-	"id": 2,
-	"taskId": 3,
-	"task": {
-		"id": 3,
-		"title": "esquentar almoço",
-		"description": "Esquentar em 2 minutos",
 		"color": "White",
-		"isFavorite": false
-	}
-}
-```
-<h2 align ='center'> deletar favorito </h2>
- 
- Nessa rota o usuário pode deletar uma tarefas favoritadas, passando o id por parâmetro na requisição.
-
-
-`DELETE /favorite/:id - FORMATO DA RESPOSTA - STATUS 204 NO CONTENT`
-
-
-<h2 align ='center'> listar favoritos </h2>
- 
- Nessa rota o usuário pode listar as tarefas favoritadas, passando o id por parâmetro na requisição.
-
-
-`GET /favorite - FORMATO DA RESPOSTA - STATUS 200`
-
-```json
-
-[
-	{
-		"id": 2,
-		"taskId": 3,
-		"task": {
-			"id": 3,
-			"title": "esquentar almoço",
-			"description": "Esquentar em 2 minutos",
-			"color": "White"
-		}
+		"is_false": false
 	},
 	{
 		"id": 3,
-		"taskId": 4,
-		"task": {
-			"id": 4,
-			"title": "atualizar Linkedin",
-			"description": "adicionar novos projetos ao meu portfolio do Linkedin",
-			"color": "White"
-		}
+		"title": "esquentar almoço",
+		"description": "Esquentar em 2 minutos",
+		"color": true
 	}
 ]
-
 ```
 
 <span> feito por : Victor Guterres Borges </span>
